@@ -78,7 +78,7 @@ aws budgets create-budget \
 >Note: Your first two action-enabled budgets are free.
 >Afterwards each subsequent action-enabled budget will incur a $0.10 daily cost. Reference [here](https://aws.amazon.com/aws-cost-management/aws-budgets/pricing).
 
-## Create a Billing Alarm using the AWS CLI
+## Create a CloudWatch Billing Alarm using the AWS CLI
 ### Create an SNS Topic
 The SNS topic is what delivers the alert to your email when you get overbilled. 
 
@@ -110,3 +110,5 @@ Next, run the following command calling the put-metric-alarm API:
 ```
 aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
 ```
+
+>Note that 10 alarms are free under the Free Tier. You will be charged for the ones incurred after that.
