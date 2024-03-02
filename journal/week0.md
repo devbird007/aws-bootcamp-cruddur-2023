@@ -53,7 +53,12 @@ Output:
 }
 ```
 
-## Create an AWS Budget
+## Two ways of tracking Billing in AWS
+There are two ways to track your spending in AWS
+1. Create a CloudWatch Billing Alarm. This is the old way
+2. Create an AWS Budget. This is a recent addition.
+
+## Create an AWS Budget using the AWS CLI
 Using the example from the CLI reference [here](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html#examples) as a guide.
 
 Retrieve your accountID with the command:
