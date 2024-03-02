@@ -75,6 +75,9 @@ aws budgets create-budget \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json
 ```
 
+>Note: Your first two action-enabled budgets are free.
+>Afterwards each subsequent action-enabled budget will incur a $0.10 daily cost. Reference [here](https://aws.amazon.com/aws-cost-management/aws-budgets/pricing).
+
 ## Create a Billing Alarm using the AWS CLI
 ### Create an SNS Topic
 The SNS topic is what delivers the alert to your email when you get overbilled. 
