@@ -120,4 +120,4 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 >Note that 10 alarms are free under the Free Tier. You will be charged for the ones incurred after that.
 
 ## Recreate Cruddur Logical Architecture Design
-![Cruddur Logical Design](assets/Cruddur\ Logical\ Design.png)
+![Cruddur Logical Design](assets/Cruddur-Logical-Design.png)
