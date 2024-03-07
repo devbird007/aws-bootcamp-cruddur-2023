@@ -81,13 +81,13 @@ aws budgets create-budget \
 ```
 
 >Note: Your first two action-enabled budgets are free.
->Afterwards each subsequent action-enabled budget will incur a $0.10 daily cost. Reference [here](https://aws.amazon.com/aws-cost-management/aws-budgets/pricing).
+>Afterwards each subsequent action-enabled budget will incur a $0.10 daily cost. Reference [AWS Budget Pricing](https://aws.amazon.com/aws-cost-management/aws-budgets/pricing).
 
 ## Create a CloudWatch Billing Alarm using the AWS CLI
 ### Create an SNS Topic
 The SNS topic is what delivers the alert to your email when you get overbilled. 
 
-Using the example from the CLI reference [here](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html#examples) as a guide.
+Using the example from the CLI reference [AWS-CLI sns create-topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html#examples) as a guide.
 
 Create the topic with the following command:
 ```
@@ -96,7 +96,7 @@ aws sns create-topic --name billing-alarm.
 
 The preceding command returns a topic ARN.
 
-Create a subscription. Remember to supply the topic ARN and your email. Reference [here](https://docs.aws.amazon.com/cli/latest/reference/sns/subscribe.html#examples):
+Create a subscription. Remember to supply the topic ARN and your email. Reference [AWS-CLI sns subscribe](https://docs.aws.amazon.com/cli/latest/reference/sns/subscribe.html#examples):
 ```
 aws sns subscribe \
     --topic-arn arn:aws:sns:us-west-2:123456XXXXXX:my-topic \
@@ -107,7 +107,7 @@ aws sns subscribe \
 Check your email and confirm the subscription.
 
 ### Create a CloudWatch Alarm using the AWS CLI
-Using the AWS Article [here](https://repost.aws/knowledge-center/cloudwatch-estimatedcharges-alarm) as a guide.
+Using the AWS Article "[How can I monitor daily EstimatedCharges and trigger a CloudWatch alarm based on my usage threshold?](https://repost.aws/knowledge-center/cloudwatch-estimatedcharges-alarm)" as a guide.
 
 Complete the `aws/json/alarm-config.json` file with your desired topic ARN.
 
