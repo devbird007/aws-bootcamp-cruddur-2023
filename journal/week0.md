@@ -54,12 +54,12 @@ Output:
 ```
 
 ## Two ways of tracking Billing in AWS
-There are two ways to track your spending in AWS
+There are two ways to track your spending in AWS:
 1. Create a CloudWatch Billing Alarm. This is the old way
 2. Create an AWS Budget. This is a recent addition.
 
 ## Create an AWS Budget using the AWS CLI
-Using the example from the CLI reference [here](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html#examples) as a guide.
+Using the example from the CLI, reference [aws budgets create-budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html#examples) as a guide.
 
 Retrieve your accountID with the command:
 
@@ -87,7 +87,7 @@ aws budgets create-budget \
 ### Create an SNS Topic
 The SNS topic is what delivers the alert to your email when you get overbilled. 
 
-Using the example from the CLI reference [AWS-CLI sns create-topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html#examples) as a guide.
+Using the example from the CLI, reference [aws sns create-topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html#examples) as a guide.
 
 Create the topic with the following command:
 ```
@@ -96,7 +96,8 @@ aws sns create-topic --name billing-alarm.
 
 The preceding command returns a topic ARN.
 
-Create a subscription. Remember to supply the topic ARN and your email. Reference [AWS-CLI sns subscribe](https://docs.aws.amazon.com/cli/latest/reference/sns/subscribe.html#examples):
+Create a subscription. 
+Remember to supply the topic ARN and your email. Reference [aws sns subscribe](https://docs.aws.amazon.com/cli/latest/reference/sns/subscribe.html#examples):
 ```
 aws sns subscribe \
     --topic-arn arn:aws:sns:us-west-2:123456XXXXXX:my-topic \
@@ -107,7 +108,7 @@ aws sns subscribe \
 Check your email and confirm the subscription.
 
 ### Create a CloudWatch Alarm using the AWS CLI
-Using the AWS Article "[How can I monitor daily EstimatedCharges and trigger a CloudWatch alarm based on my usage threshold?](https://repost.aws/knowledge-center/cloudwatch-estimatedcharges-alarm)" as a guide.
+Using the AWS Article "[How can I monitor daily EstimatedCharges and trigger a CloudWatch alarm based on my usage threshold?](https://repost.aws/knowledge-center/cloudwatch-estimatedcharges-alarm)" as a guide:
 
 Complete the `aws/json/alarm-config.json` file with your desired topic ARN.
 
