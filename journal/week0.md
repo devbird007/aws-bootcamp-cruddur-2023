@@ -91,7 +91,7 @@ Using the example from the CLI, reference [aws sns create-topic](https://docs.aw
 
 Create the topic with the following command:
 ```
-aws sns create-topic --name billing-alarm.
+aws sns create-topic --name billing-alarm
 ```
 
 The preceding command returns a topic ARN.
