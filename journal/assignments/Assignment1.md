@@ -49,4 +49,5 @@
           - Click **Create Rule** at the bottom
 
 ## An Architectural Diagram (to the best of your ability) of The CI/CD Logical Pipeline in Lucid Charts	
+![CI/CD Image](assets/CICD Pipeline from cantrill.png)
 	
