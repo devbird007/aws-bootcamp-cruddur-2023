@@ -20,7 +20,7 @@ cd ..
 Create a file here: `backend-flask/Dockerfile`
 
 ```
-FROM python:3.10.14-bookworm
+FROM python:3.10-slim-buster
 
 WORKDIR /backend-flask
 
