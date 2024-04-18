@@ -16,7 +16,7 @@ cd ..
 - Append to the url `/api/activities/home`
 - You should get back json
 
-## Add Dockerfile
+### Add Dockerfile
 Create a file here: `backend-flask/Dockerfile`
 
 ```
@@ -37,8 +37,26 @@ EXPOSE ${PORT}
 CMD [ "python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=4567" ]
 ```
 
-## Build Container
+### Build Container
 
 ```
 docker build -t backend-flask ./backend-flask
+```
+
+### Run Container
+Run
+
+```
+docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
+```
+
+Run in background
+```
+docker container run --rm -p 4567:4567 -d backend-flask
+```
+
+### Send `curl` to Test Server
+
+```
+curl -X GET http://localhost:4567/api/activities/home -H "Accept: application/json" -H "Content-Type: application/json"
 ```
