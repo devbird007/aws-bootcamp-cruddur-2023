@@ -55,6 +55,10 @@ Run in background
 docker container run --rm -p 4567:4567 -d backend-flask
 ```
 
+Return the container id into an Env Var
+```
+CONTAINER_ID=$(docker run --rm -p 4567:4567 -d backend-flask)
+```
 ### Send `curl` to Test Server
 
 ```
