@@ -64,3 +64,17 @@ CONTAINER_ID=$(docker run --rm -p 4567:4567 -d backend-flask)
 ```
 curl -X GET http://localhost:4567/api/activities/home -H "Accept: application/json" -H "Content-Type: application/json"
 ```
+
+### Gain Access to a Container
+```
+docker exec CONTAINER_ID -it /bin/bash
+```
+
+### Overriding Ports
+```
+docker run --rm -p 4567:4567 -e FLASK_ENV=production -e PORT=8080 -e FRONTEND_URL='*' -e BACKEND_URL='*' it backend-flask
+```
+
+## Containerize the Frontend
+### Run NPM Install
+
