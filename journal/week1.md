@@ -11,9 +11,9 @@ python3 -m flask run --host=0.0.0.0 --port=4567
 cd ..
 ```
 
-- Make sure to unlock the port `4567` in the port tab of your VSCode
+- Make sure to unlock port `4567` in the **PORTS** tab of your VSCode
 - Open the link for `4567` in your browser
-- Append to the url `/api/activities/home`
+- Append `/api/activities/home` to the url
 - You should get back json
 
 ### Add Dockerfile
