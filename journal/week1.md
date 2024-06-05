@@ -2,7 +2,7 @@
 
 ## Containerize the Backend
 ### Run Python
-```
+```sh
 cd backend-flask
 pip3 install -r requirements.txt
 export FRONTEND_URL="*"
@@ -36,6 +36,13 @@ ENV FLASK_ENV=development
 EXPOSE ${PORT}
 
 CMD [ "python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=4567" ]
+```
+
+### Run `unset`
+You should ensure to unset the env vars `FRONTEND_URL` & `BACKEND_URL` so they don't get in the way of the container's values.
+```sh
+unset FRONTEND_URL
+unset BACKEND_URL
 ```
 
 ### Build Container
