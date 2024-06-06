@@ -93,7 +93,7 @@ docker run --rm -p 4567:4567 -e FLASK_ENV=production -e PORT=8080 -e FRONTEND_UR
 ## Containerize the Frontend
 
 ### Run NPM Install
-Ensure to run the `npm install` command before building the container since it needs to copy the contents of node_modules
+Ensure to run the `npm install`(or `npm i`) command before building the container since it needs to copy the contents of node_modules
 
 ```
 cd frontend-react-js
