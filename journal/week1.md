@@ -97,7 +97,7 @@ Ensure to run the `npm install`(or `npm i`) command before building the containe
 
 ```
 cd frontend-react-js
-npm i
+npm i 
 ```
 
 ### Create Dockerfile
@@ -162,4 +162,10 @@ networks:
   internal-network:
     driver: bridge
     name: cruddur
+```
+
+### Run the `docker compose` file
+Execute the following command:
+```
+docker compose up
 ```
