@@ -13,3 +13,13 @@ A bash script file was created `backend-flask/docker_cmd.sh`.
 Next, modifications to the Dockerfile were added:
 - A `RUN` command to turn the earlier file into an executable.
 - A final `CMD` file to run the executable bash script.
+
+## 2. Push and Tag an Image to DockerHub
+```
+cd ./backend-flask
+docker build -t backend-flask .
+docker tag [IMAGE_ID] [REGISTRY_NAME]/backend-flask:1
+
+docker login    # Enter username and password
+docker push [REGISTRY_NAME]/backend-flask:1
+```
