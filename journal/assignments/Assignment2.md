@@ -23,3 +23,4 @@ docker tag [IMAGE_ID] [REGISTRY_NAME]/backend-flask:1
 docker login    # Enter username and password
 docker push [REGISTRY_NAME]/backend-flask:1
 ```
+
