@@ -1,30 +1,25 @@
-FROM python:3.10-slim-buster
+FROM python:3.10-slim-buster as base
 
-# Inside Container
-# make a new folder inside container
 WORKDIR /backend-flask
 
-# Outside Container -> Inside Container
-# This contains the libraries we want to install to run the app
-COPY requirements.txt requirements.txt
-
-# Inside Container
-# Install the python libraries used for the app
-RUN pip3 install -r requirements.txt
-
-# Outside Container -> Inside Container
-# '.' means everything in the current directory
-# first period '.' - /backend-flask (outside container)
-# second period '.' - /backend-flask (inside container)
 COPY . .
 
-# Set Environment Variables (Env Vars)
-# inside Container and will remain set when the container is running
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+##
+
+FROM python:3.10-alpine3.20
+
+WORKDIR /backend-flask
+
+COPY --from=base /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
+
+COPY --from=base /backend-flask .
+
 ENV FLASK_ENV=development
 
 EXPOSE ${PORT}
 
-# CMD (Command)
-# python3 -m flask run --host=0.0.0.0 --port=4567
-RUN chmod +x ./docker_cmd.sh
-CMD [ "./docker_cmd.sh" ]
+RUN chmod +x docker_cmd.sh
+
+CMD [ "sh", "docker_cmd.sh" ]
